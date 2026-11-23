@@ -1,0 +1,2 @@
+# ESP32-DIV-v2-JitterBox-Firmware-JitterDeck-Software
+MKSignal [WIP]: Custom ESP32-S3 multi-radio firmware &amp; Python cyberdeck suite for MKSignal / ESP32-DIV v2 (CC1101 Sub-GHz, triple nRF24, IR, NFC &amp; GPS). Features JitterDeck waterfall RF/IR control, JitterGotchi gamified signal pet, Food/IceCream ("I Scream" jammer) modules &amp; native USB JitterDucky HID. Built for authorized RF lab testing.
