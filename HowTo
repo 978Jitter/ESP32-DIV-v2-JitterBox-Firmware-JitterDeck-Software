@@ -1,0 +1,22 @@
+Install required libraries (one-time)
+arduino-cli lib install "RF24" "Adafruit GFX Library" "Adafruit ILI9341" "Adafruit NeoPixel" "IRremoteESP8266" "ArduinoJson"
+This sketch needs all of these; ArduinoJson must land on v7.x (the installer grabs latest by default, which is v7).
+
+
+Compile
+From inside the folder containing JitterBox5.ino, run:
+arduino-cli compile --fqbn "esp32:esp32:esp32s3:USBMode=default,CDCOnBoot=default,PSRAM=disabled,FlashSize=16M,PartitionScheme=app3M_fat9M_16MB" .
+The trailing "." means "compile the sketch in this current directory" — no need to type the folder name again.
+
+
+Confirm the port
+ls /dev/ttyUSB* or arduino-cli board list to confirm which port the board is on. It's usually /dev/ttyUSB0 unless you've got other serial devices plugged in.
+
+
+Upload
+arduino-cli upload -p /dev/ttyUSB0 --fqbn "esp32:esp32:esp32s3:USBMode=default,CDCOnBoot=default,PSRAM=disabled,FlashSize=16M,PartitionScheme=app3M_fat9M_16MB" .
+Same trailing "." trick. Swap /dev/ttyUSB0 if your board enumerates elsewhere.
+
+or do both in one line
+arduino-cli compile --fqbn "esp32:esp32:esp32s3:USBMode=default,CDCOnBoot=default,PSRAM=disabled,FlashSize=16M,PartitionScheme=app3M_fat9M_16MB" . && arduino-cli upload -p /dev/ttyUSB0 --fqbn "esp32:esp32:esp32s3:USBMode=default,CDCOnBoot=default,PSRAM=disabled,FlashSize=16M,PartitionScheme=app3M_fat9M_16MB"
+
